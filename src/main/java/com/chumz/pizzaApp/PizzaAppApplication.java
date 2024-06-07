@@ -10,6 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Log
 public class PizzaAppApplication implements CommandLineRunner {
 
+	private PizzaConfig pizzaConfig;
+
+	public PizzaAppApplication(PizzaConfig pizzaConfig) {
+		this.pizzaConfig = pizzaConfig;
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(PizzaAppApplication.class, args);
 
@@ -17,9 +23,6 @@ public class PizzaAppApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		final PizzaConfig pizzaConfig = new PizzaConfig(
-				"tomato", "mozzarella", "thin"
-		);
 
 		log.info(
 				String.format("I want a %s crust pizza, with %s and %s sauce",
