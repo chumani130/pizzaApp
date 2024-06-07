@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "pizza")
+@ConfigurationProperties(prefix = "pizza")  //important argument, that key is important searched by springbooot inside your yml or properies file etc
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
